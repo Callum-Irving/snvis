@@ -8,6 +8,7 @@ with open("README.md") as readme:
         version="0.1.0",
         description="Social network visualising tool",
         long_description=readme.read(),
+        url="https://github.com/Callum-Irving/snvis",
         author="Callum Irving",
         author_email="callum.irving04@gmail.com",
         license="MIT",
