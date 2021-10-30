@@ -1,3 +1,3 @@
-# Social Network Visualizer (snvis)
+# Social Network Visualiser (snvis)
 
-This is a tool to visualize social networks from a spreadsheet of connections.
+This is a tool to visualise social networks from a spreadsheet of connections.
