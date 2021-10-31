@@ -16,7 +16,7 @@ def main(args: argparse.Namespace) -> int:
     # Read spreadsheet
     logger.status_msg("Parsing file")
 
-    rows = {}
+    rows: dict[str, list[str]] = {}
 
     with open(args.input) as f:
         labels = f.readline().strip().split("\t")
@@ -77,7 +77,6 @@ def main(args: argparse.Namespace) -> int:
 
     # Plot graph
     logger.status_msg("Writing graph to file")
-    # students.vs["label"] = students.vs["name"]
     layout = people.layout("kk")
     igraph.plot(people, str(args.o), margin=30, layout=layout)
 
@@ -90,7 +89,7 @@ def main(args: argparse.Namespace) -> int:
         else:
             logger.error_msg("xdg-open is not installed")
             return 1
-    # Following are UNTESTED
+    # TODO: Following are UNTESTED
     elif os.sys.platform == "win32":
         logger.status_msg("Opening SVG with default program")
         subprocess.run(["start", str(args.o)])

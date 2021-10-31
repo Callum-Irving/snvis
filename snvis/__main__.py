@@ -4,7 +4,7 @@ from snvis import driver
 from snvis import cli
 
 
-def main() -> int:
+def main():
     args = cli.parse_args()
     return driver.main(args)
 
