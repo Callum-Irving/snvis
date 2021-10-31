@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 with open("README.md") as readme:
     setup(
         name="snvis",
-        version="0.1.4",
+        version="0.1.5",
         description="Social network visualising tool",
         long_description=readme.read(),
         long_description_content_type="text/markdown",
