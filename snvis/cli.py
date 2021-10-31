@@ -5,6 +5,7 @@ import pathlib
 def parse_args() -> argparse.Namespace:
     # Get command line args
     parser = argparse.ArgumentParser(
+        prog="snvis",
         description="Create and view a graph representation of a social network.")
     parser.add_argument(
         "-n",
