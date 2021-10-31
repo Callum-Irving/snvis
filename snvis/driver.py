@@ -73,7 +73,7 @@ def main(args: argparse.Namespace) -> int:
     logger.status_msg("Writing graph to file")
     students.vs["label"] = students.vs["name"]
     layout = students.layout("kk")
-    igraph.plot(students, str(args.o), margin=20, layout=layout)
+    igraph.plot(students, str(args.o), margin=30, layout=layout)
 
     # Show graph using default program from system
     if os.sys.platform.startswith("linux"):
