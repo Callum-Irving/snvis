@@ -20,8 +20,18 @@ def main(args: argparse.Namespace) -> int:
 
     with open(args.input) as f:
         labels = f.readline().strip().split("\t")
-        name_col = labels.index(args.n)
-        cons_col = labels.index(args.c)
+
+        try:
+            name_col = labels.index(args.n)
+        except ValueError:
+            logger.error_msg(f"Could not find column labelled '{args.n}'")
+            return 1
+
+        try:
+            cons_col = labels.index(args.c)
+        except ValueError:
+            logger.error_msg(f"Could not find column labelled '{args.c}'")
+            return 1
 
         for line in f.readlines():
             cols = line.strip().split("\t")
