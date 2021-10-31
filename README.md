@@ -3,6 +3,10 @@
 This is a tool to visualise social networks from a spreadsheet of connections.
 It creates an svg image and then displays is with the default system tool.
 
+Example:
+
+![demo image](example/graph.svg)
+
 ## Installing
 
 Requirements:
