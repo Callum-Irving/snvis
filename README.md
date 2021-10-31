@@ -64,10 +64,10 @@ Example spreadsheet:
 | John    | James, roberf |
 
 Notice that there are some typos in this spreadsheet. The program can detect
-minor typos like "Roberf". One important thing to note here is that whichever
-name the program sees first is the one it will use, even the first one is the
-one with the typo. In the example it sees "Wiliam" before "William", so it will
-think that "Wiliam" is the correct one and display it in the image.
+minor typos like "Roberf". The program uses the names in the "name" column as
+the correct names. In this example "Robert" would actually get corrected to
+"Roberf" because "Robert" is only in the "connections" column and "Roberf" is in
+the "name" column.
 
 ## Contributing
 
