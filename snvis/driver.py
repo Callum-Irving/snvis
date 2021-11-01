@@ -11,7 +11,7 @@ from snvis.log import logger as logger_generator
 
 
 def main(args: argparse.Namespace) -> int:
-    logger = logger_generator(args.v)
+    logger = logger_generator(args.q)
 
     # Read spreadsheet
     logger.status_msg("Parsing file")
@@ -20,27 +20,32 @@ def main(args: argparse.Namespace) -> int:
 
     with open(args.input) as f:
         labels = f.readline().strip().split("\t")
-
-        try:
-            name_col = labels.index(args.n)
-        except ValueError:
-            logger.error_msg(f"Could not find column labelled '{args.n}'")
+        if not args.n < len(labels):
+            logger.error_msg(f"Column number '{args.n}' is too large")
+            return 1
+        elif not args.c < len(labels):
+            logger.error_msg(f"Column number '{args.c}' is too large")
+            return 1
+        elif args.n == args.c:
+            logger.error_msg(
+                f"Name and connections columns cannot be the same")
             return 1
 
-        try:
-            cons_col = labels.index(args.c)
-        except ValueError:
-            logger.error_msg(f"Could not find column labelled '{args.c}'")
-            return 1
-
-        for line in f.readlines():
+        for row, line in enumerate(f.readlines()):
             cols = line.strip().split("\t")
-            name = cols[name_col].strip()
+
             try:
-                cons = cols[cons_col].split(",")
+                name = cols[args.n].strip()
+            except IndexError:
+                logger.error_msg(f"Name column at row {row+2} is empty")
+                return 1
+
+            try:
+                cons = cols[args.c].split(",")
                 cons = [x.strip() for x in cons]
             except IndexError:
                 cons = []
+
             rows[name] = cons
 
     # Name matching

@@ -15,11 +15,11 @@ class color:
 
 
 class logger:
-    def __init__(self, verbose: bool):
-        self.verbose = verbose
+    def __init__(self, quiet: bool):
+        self.quiet = quiet
 
     def status_msg(self, message: str):
-        if self.verbose:
+        if not self.quiet:
             print(color.BOLD + color.BLUE + "[STATUS]" + color.END, message)
 
     def error_msg(self, message: str):
@@ -27,6 +27,6 @@ class logger:
               color.END, message, file=sys.stderr)
 
     def custom_msg(self, label: str, message: str):
-        if self.verbose:
+        if not self.quiet:
             print(color.BOLD + color.GREEN +
                   "[" + label + "]" + color.END, message)
