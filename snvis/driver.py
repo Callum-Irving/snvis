@@ -96,6 +96,9 @@ def main(args: argparse.Namespace) -> int:
     igraph.plot(people, str(args.o), margin=30, layout=layout)
 
     # Show graph using default program from system
+    if not args.view:
+        return
+
     if os.sys.platform.startswith("linux"):
         if which("xdg-open"):
             logger.status_msg("Opening file with xdg-open")

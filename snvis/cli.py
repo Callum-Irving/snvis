@@ -39,5 +39,11 @@ def parse_args() -> argparse.Namespace:
         help="tab separated values file",
         metavar="SPREADSHEET"
     )
+    parser.add_argument(
+        "-v",
+        "--view",
+        help="view the output using default system tool",
+        action="store_true"
+	)
     args = parser.parse_args()
     return args
