@@ -69,10 +69,12 @@ def main(args: argparse.Namespace) -> int:
         for i, con in enumerate(cons):
             closest_match = check_name_match(con)
             if closest_match == None:
-                logger.error_msg(
+                logger.custom_msg(
+                    "NAME MATCHER",
                     f"Unknown name in connections to {name}: {cons[i]}")
-                return 1
-            cons[i] = closest_match
+                cons.pop(i)
+            else:
+                cons[i] = closest_match
         rows[name] = cons
 
     # Generate graph
