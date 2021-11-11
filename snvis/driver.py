@@ -13,6 +13,11 @@ from snvis.log import logger as logger_generator
 def main(args: argparse.Namespace) -> int:
     logger = logger_generator(args.q)
 
+    # Check input file exists
+    if not os.path.isfile(args.input):
+        logger.error_msg(f"Could not find file: '{args.input}'")
+        return 1
+
     # Read spreadsheet
     logger.status_msg("Parsing file")
 
@@ -95,11 +100,14 @@ def main(args: argparse.Namespace) -> int:
     # Plot graph
     logger.status_msg("Writing graph to file")
     layout = people.layout("kk")
-    igraph.plot(people, str(args.o), margin=30, layout=layout)
+    try:
+        igraph.plot(people, str(args.o), margin=30, layout=layout)
+    except ValueError:
+        logger.error_msg(f"Could not write file. Do you have permissions?")
 
     # Show graph using default program from system
     if not args.view:
-        return
+        return 0
 
     if os.sys.platform.startswith("linux"):
         if which("xdg-open"):
