@@ -71,15 +71,8 @@ def main(args: argparse.Namespace) -> int:
         return None
 
     for name, cons in rows.items():
-        for i, con in enumerate(cons):
-            closest_match = check_name_match(con)
-            if closest_match == None:
-                logger.custom_msg(
-                    "NAME MATCHER",
-                    f"Unknown name in connections to {name}: {cons[i]}")
-                cons.pop(i)
-            else:
-                cons[i] = closest_match
+        cons = [check_name_match(con) for con in cons]
+        cons = [con for con in cons if con != None]
         rows[name] = cons
 
     # Generate graph
@@ -87,6 +80,7 @@ def main(args: argparse.Namespace) -> int:
     people = igraph.Graph()
     people.add_vertices(len(rows))
     people.vs["label"] = list(rows.keys())
+
     for name, cons in rows.items():
         edge_from = people.vs.find(label=name).index
         for con in cons:
@@ -100,6 +94,7 @@ def main(args: argparse.Namespace) -> int:
     # Plot graph
     logger.status_msg("Writing graph to file")
     layout = people.layout("kk")
+
     try:
         igraph.plot(people, str(args.o), margin=30, layout=layout)
     except ValueError:
