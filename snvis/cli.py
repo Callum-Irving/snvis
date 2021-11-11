@@ -44,6 +44,12 @@ def parse_args() -> argparse.Namespace:
         "--view",
         help="view the output using default system tool",
         action="store_true"
-	)
+    )
+    parser.add_argument(
+        "-s",
+        "--simplify",
+        help="remove unconnected people and self-loops",
+        action="store_true"
+    )
     args = parser.parse_args()
     return args

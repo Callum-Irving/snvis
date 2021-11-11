@@ -95,6 +95,11 @@ def main(args: argparse.Namespace) -> int:
     logger.status_msg("Writing graph to file")
     layout = people.layout("kk")
 
+    if args.simplify:
+        logger.status_msg("Removing unconnected people and self-loops")
+        people.vs.select(_degree=0).delete()
+        people.simplify()
+
     try:
         igraph.plot(people, str(args.o), margin=30, layout=layout)
     except ValueError:
