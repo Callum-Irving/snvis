@@ -5,7 +5,7 @@ It creates an svg image and then displays is with the default system tool.
 
 Example:
 
-![demo image](example/graph.svg)
+![demo image](https://raw.githubusercontent.com/Callum-Irving/snvis/5447bdaf3702e0233885c4e501c056e8a5463655/example/graph.svg?raw=true)
 
 ## Installing
 
