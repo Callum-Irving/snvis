@@ -17,6 +17,12 @@ Requirements:
 pip install snvis
 ```
 
+or if you want the latest development version (recommended):
+
+```
+pip install git+https://github.com/Callum-Irving/snvis.git#egg=snvis
+```
+
 ## Usage
 
 Once you have installed `snvis`, you can run it using `snvis` as long as you
