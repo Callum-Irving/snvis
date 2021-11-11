@@ -13,7 +13,7 @@ Requirements:
 * xdg-open (Linux only)
 * Python 3.9 or greater
 
-```sh
+```
 pip install snvis
 ```
 
@@ -23,7 +23,7 @@ Once you have installed `snvis`, you can run it using `snvis` as long as you
 have added the directory it was installed to to your path. If this doesn't work,
 you can run:
 
-```sh
+```
 python -m snvis
 ```
 
@@ -32,8 +32,8 @@ format.
 
 An example usage would be:
 
-```sh
-snvis data.tsv -v
+```
+snvis data.tsv --view
 ```
 
 This runs on the file `data.tsv` in verbose mode so that you can see what the
@@ -41,7 +41,7 @@ program is doing.
 
 To see all options, run:
 
-```sh
+```
 snvis -h
 ```
 
@@ -77,14 +77,8 @@ When writing commit messages, please use conventional commits.
 
 ### Building
 
-To build a release, install build using 
+To build a release, run
 
-```sh
-pip install build
 ```
-
-then to build the package, run
-
-```sh
-python -m build
+python setup.py sdist bdist_wheel
 ```
