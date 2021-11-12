@@ -2,10 +2,14 @@
 
 from setuptools import setup, find_packages
 
+pkginfo = {}
+with open("snvis/_version.py") as f:
+    exec(f.read(), pkginfo)
+
 with open("README.md") as readme:
     setup(
         name="snvis",
-        version="0.1.8",
+        version=pkginfo["__version__"],
         description="Social network visualising tool",
         long_description=readme.read(),
         long_description_content_type="text/markdown",

@@ -1,6 +1,8 @@
 import argparse
 import pathlib
 
+from snvis import __version__
+
 
 def parse_args() -> argparse.Namespace:
     # Get command line args
@@ -50,6 +52,12 @@ def parse_args() -> argparse.Namespace:
         "--simplify",
         help="remove unconnected people and self-loops",
         action="store_true"
+    )
+    parser.add_argument(
+        "--version",
+        help="show the version of snvis that is installed",
+        action="version",
+        version=f"{parser.prog} {__version__}"
     )
     args = parser.parse_args()
     return args
