@@ -1,4 +1,19 @@
-# [0.1.7](https://github.com/Callum-Irving/snvis/compare/v0.1.6...v0.1.7) (2021-11-11)
+# [0.1.8](https://github.com/Callum-Irving/snvis/compare/v0.1.7...v0.1.8) (2021-11-12)
+
+
+### Bug Fixes
+
+* add more error handling ([3a6df5a](https://github.com/Callum-Irving/snvis/commit/3a6df5a1ae75d160dbeda6bc722a21698bbda2d4))
+* use list comp to remove bad connections ([6b18f07](https://github.com/Callum-Irving/snvis/commit/6b18f079cc6a5c8bcbe0abfe8375b309b49001fd))
+
+
+### Features
+
+* add option to simplify graph ([560c103](https://github.com/Callum-Irving/snvis/commit/560c10369856aa67fb5598b078feb59ad03a8157))
+
+
+
+# 0.1.7 (2021-11-11)
 
 
 ### Bug Fixes
