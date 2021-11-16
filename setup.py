@@ -26,5 +26,5 @@ with open("README.md") as readme:
         include_package_data=True,
         install_requires=["thefuzz >= 0.19.0", "python-igraph >= 0.9.8",
                           "python-Levenshtein>=0.12.2", "cairocffi>=1.3.0"],
-        entry_points={"console_scripts": ["snvis = snvis.__main__:main"]}
+        entry_points={"console_scripts": ["snvis = snvis.cli.__main__:main"]}
     )
