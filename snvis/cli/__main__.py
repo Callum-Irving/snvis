@@ -99,6 +99,7 @@ def main() -> int:
         return 1
 
     if not args.view:
+        logging.info("Exited succesfully")
         return 0
 
     # Show graph using default program from system
