@@ -103,7 +103,7 @@ def main() -> int:
         return 0
 
     # Show graph using default program from system
-    if os.sys.platform.startswith("linux"):
+    if sys.platform.startswith("linux"):
         if which("xdg-open"):
             logging.info("Opening file with xdg-open")
             subprocess.run(["xdg-open", str(args.o)],
@@ -112,17 +112,18 @@ def main() -> int:
             logging.error("xdg-open is not installed")
             return 1
     # TODO: Following are UNTESTED
-    elif os.sys.platform == "win32":
+    elif sys.platform == "win32":
         logging.info("Opening SVG with default program")
         subprocess.run(["start", str(args.o)])
-    elif os.sys.platform == "darwin":
+    elif sys.platform == "darwin":
         logging.info("Opening SVG with default program")
         subprocess.run(["open", str(args.o)])
     else:
-        logging.error(f"Unsupported platform: {os.sys.platform}")
+        logging.error(f"Unsupported platform: {sys.platform}")
         return 1
 
     logging.info("Exited succesfully")
+    return 0
 
 
 if __name__ == "__main__":
