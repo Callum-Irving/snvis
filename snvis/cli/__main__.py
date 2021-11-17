@@ -8,7 +8,7 @@ import sys
 
 import igraph
 
-from snvis.core import graphing, parsing
+from snvis import core
 from snvis import __version__
 
 
@@ -80,13 +80,13 @@ def main() -> int:
         logging.error("Name and connections columns cannot be equal")
         return 1
 
-    rows = parsing.parse_file(
+    rows = core.parsing.parse_file(
         args.input, args.n, args.c)
 
     if rows == 1:
         return 1
 
-    graph = graphing.generate_igraph(rows, simplify=args.simplify)
+    graph = core.graphing.generate_igraph(rows, simplify=args.simplify)
 
     # Output graph
     logging.info("Writing graph to file")
