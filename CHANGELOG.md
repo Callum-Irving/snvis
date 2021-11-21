@@ -1,3 +1,12 @@
+# [0.1.11](https://github.com/Callum-Irving/snvis/compare/v0.1.10...v0.1.11) (2021-11-21)
+
+
+### Bug Fixes
+
+* add pyvis to setup.py ([c09ef58](https://github.com/Callum-Irving/snvis/commit/c09ef58786d093bcf87a3faaad5fcf87c7ee8c02))
+
+
+
 # [0.1.10](https://github.com/Callum-Irving/snvis/compare/v0.1.9...v0.1.10) (2021-11-21)
 
 
