@@ -1,3 +1,12 @@
+# [0.1.10](https://github.com/Callum-Irving/snvis/compare/v0.1.9...v0.1.10) (2021-11-21)
+
+
+### Bug Fixes
+
+* add pyvis to dependencies ([efc33bc](https://github.com/Callum-Irving/snvis/commit/efc33bc2573e01ee00e7bb360dc24ce22d85311f))
+
+
+
 # [0.1.9](https://github.com/Callum-Irving/snvis/compare/v0.1.8...0.1.9) (2021-11-21)
 
 
