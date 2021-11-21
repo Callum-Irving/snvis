@@ -1,3 +1,19 @@
+# [0.1.9](https://github.com/Callum-Irving/snvis/compare/v0.1.8...0.1.9) (2021-11-21)
+
+
+### Bug Fixes
+
+* add success message when not viewing ([1f9c703](https://github.com/Callum-Irving/snvis/commit/1f9c70345f49bd3d4676bf15d6505ef273a64ff1))
+* change os.sys.platform to sys.platform ([2982382](https://github.com/Callum-Irving/snvis/commit/29823823700eaa2f8d25b20fb5725c9bd75a6b61))
+
+
+### Features
+
+* add pyvis support ([e1227da](https://github.com/Callum-Irving/snvis/commit/e1227dadd7ccc083b041388910276fed96c722be))
+* add version command ([d9e1b2a](https://github.com/Callum-Irving/snvis/commit/d9e1b2aa82660b57512e6ad1eca28cd45a083d36))
+
+
+
 # [0.1.8](https://github.com/Callum-Irving/snvis/compare/v0.1.7...v0.1.8) (2021-11-12)
 
 
