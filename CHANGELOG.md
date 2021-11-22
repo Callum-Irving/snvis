@@ -1,3 +1,12 @@
+# [0.1.12](https://github.com/Callum-Irving/snvis/compare/v0.1.11...v0.1.12) (2021-11-22)
+
+
+### Bug Fixes
+
+* remove typehints for compatibility ([3754c83](https://github.com/Callum-Irving/snvis/commit/3754c830883bde748e398e76d8e395c5b4f8652d))
+
+
+
 # [0.1.11](https://github.com/Callum-Irving/snvis/compare/v0.1.10...v0.1.11) (2021-11-21)
 
 
