@@ -34,7 +34,7 @@ def parse_args():
         type=pathlib.Path,
         help="name of the output file (no extension)",
         metavar="FILE",
-        default="graph.svg"
+        default="graph"
     )
     parser.add_argument(
         "-q",
