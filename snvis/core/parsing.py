@@ -14,7 +14,7 @@ def parse_file(file_path, name_col, cons_col):
     # Read spreadsheet
     logging.info("Parsing file")
 
-    rows: dict[str, list[str]] = {}
+    rows = {}
     with open(file_path) as f:
         labels = f.readline().strip().split("\t")
         if not name_col < len(labels):

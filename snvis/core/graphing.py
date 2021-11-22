@@ -3,7 +3,7 @@ import logging
 import igraph
 
 
-def generate_igraph(rows: dict[str, list[str]], simplify=True) -> igraph.Graph:
+def generate_igraph(rows, simplify=True):
     logging.info("Generating graph")
     people = igraph.Graph()
     people.add_vertices(len(rows))

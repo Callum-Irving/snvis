@@ -11,7 +11,7 @@ from snvis import core
 from snvis import __version__
 
 
-def parse_args() -> argparse.Namespace:
+def parse_args():
     parser = argparse.ArgumentParser(
         prog="snvis",
         description="Create and view a graph representation of a social network.")
